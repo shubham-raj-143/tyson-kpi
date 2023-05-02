@@ -1,0 +1,70 @@
+ul {
+    background-color: #EDF3F9;
+    text-align: center;
+
+
+}
+
+.nav-link {
+    color: #002554;
+    margin-top: 2rem;
+
+    font-weight: bold;
+
+}
+
+.nav-link:hover {
+    color: #002554;
+}
+
+
+.logo {
+    width: 12rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+.profile_logo {
+    justify-content: end;
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+/* table styling */
+.table-responsive {
+    max-height:15rem;
+}
+.table_container {
+    justify-content: center;
+    
+}
+
+table {
+    margin: 0 auto;
+}
+
+td,th {
+    padding: 5px 20px;
+    color: #002554;
+    text-align: center;
+}
+
+
+
+/* form styling */
+.send_form{
+padding-left: 8rem;
+padding-right: 5rem;
+}
+.sub_btn{
+    background-color:#FFF2E0 ;
+    color: #916600;
+    font-weight: 500;
+
+}
+.sub_btn:hover{
+    background-color:#916600 ;
+    color: #FFF2E0;
+}
