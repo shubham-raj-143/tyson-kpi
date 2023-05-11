@@ -16,7 +16,7 @@ export default function Header() {
 
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item brand">
-                    <img src={h_blue_logo} class="logo img-fluid rounded-top" alt="tyson logo" />
+                   <a href="https://www.tysonfoods.com/" target="_blank"> <img src={h_blue_logo} class="logo img-fluid rounded-top" alt="tyson logo" /></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mt-4" aria-current="page" href="/">HANA Systems</a>
