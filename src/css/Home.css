@@ -44,6 +44,14 @@ ul {
 table {
     margin: 0 auto;
 }
+a{
+    text-decoration: none;
+    color: #506B67;
+    float: left;
+}
+a:hover{
+    color: #809E9B;
+}
 
 td,th {
     padding: 5px 20px;

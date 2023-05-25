@@ -1,0 +1,106 @@
+[
+ {
+  "sap_prod": "S\/4HANA",
+  "sap_sys_id": "P41",
+  "sys_desc": "Production",
+  "Type": "S\/4 HANA",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "P4A"
+ },
+ {
+  "sap_prod": "TM",
+  "sap_sys_id": "PL1",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PLA"
+ },
+ {
+  "sap_prod": "Fiori",
+  "sap_sys_id": "PG1",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PGA"
+ },
+ {
+  "sap_prod": "SLT",
+  "sap_sys_id": "PF2",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PFB"
+ },
+ {
+  "sap_prod": "GTS",
+  "sap_sys_id": "PT3",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "NO"
+ },
+ {
+  "sap_prod": "ECC",
+  "sap_sys_id": "PR3",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "NO"
+ },
+ {
+  "sap_prod": "GRC",
+  "sap_sys_id": "PY6",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PYF"
+ },
+ {
+  "sap_prod": "BW",
+  "sap_sys_id": "PB1",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "NO"
+ },
+ {
+  "sap_prod": "CUA",
+  "sap_sys_id": "PM1",
+  "sys_desc": "Production",
+  "Type": "JAVA",
+  "Environment": "PROD",
+  "run_hana": "NO"
+ },
+ {
+  "sap_prod": "ADS",
+  "sap_sys_id": "PA5",
+  "sys_desc": "Production",
+  "Type": "JAVA",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PAE"
+ },
+ {
+  "sap_prod": "PI",
+  "sap_sys_id": "PX3",
+  "sys_desc": "Production",
+  "Type": "JAVA",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PXC"
+ },
+ {
+  "sap_prod": "SolMan",
+  "sap_sys_id": "PS3",
+  "sys_desc": "Production",
+  "Type": "ABAP",
+  "Environment": "PROD",
+  "run_hana": "YES",
+  "HANA": "PSC"
+ }
+]
