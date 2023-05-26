@@ -77,12 +77,12 @@ app.post('/generate-and-send', async (req, res) => {
       const worksheet = workbook.addWorksheet('Sheet 1');
       worksheet.columns = [
         { header: 'SAP Product', key: 'sap_prod', width: 20 },
-        { header: 'SAP System ID', key: 'sap_sys_id', width: 10 },
+        { header: 'SAP System ID', key: 'sap_sys_id', width: 20 },
         { header: 'System Description', key: 'sys_desc', width: 30 },
-        { header: 'Type', key: 'Type', width: 30 },
+        { header: 'Type', key: 'Type', width: 20 },
         { header: 'Environment', key: 'Environment', width: 30 },
         { header: 'Does it run on a Hana database', key: 'run_hana', width: 30 },
-        { header: 'HANA', key: 'HANA', width: 30 },
+        { header: 'HANA', key: 'HANA', width: 20 },
       ];
       tableData.forEach((row) => {
         worksheet.addRow(row);
@@ -122,7 +122,7 @@ app.post('/generate-and-send', async (req, res) => {
     // Delete temporary file
     fs.unlinkSync(attachmentPath);
 
-    res.json({ message: 'Email sent successfully' });
+    res.json({ message: 'sent' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to send email' });

@@ -13,7 +13,8 @@ import "jspdf-autotable";
 import { useDownloadExcel } from "react-export-table-to-excel"
 import React from 'react';
 import axios from 'axios';
-import JsonData from './table.json'
+import JsonData from './table.json';
+import LoadingBar from 'react-top-loading-bar'
 
 export default function Home() {
 
@@ -122,22 +123,39 @@ export default function Home() {
 
     }
     // sending email
+    const [progress, setProgress] = useState(0)
     const [recipientEmail, setRecipientEmail] = useState('');
     const handleGenerateAndSend = async () => {
 
-        handleButtonClick();
+
         event.preventDefault();
         try {
 
+            setProgress(progress + 50)
             const response = await axios.post('http://localhost:3000/generate-and-send', {
                 recipientEmail,
                 fileFormat,
             });
-            setStatus({ type: 'sent' });
+            // console.log(response);
+            if (response.data.message === 'sent') {
+                
+                setStatus({ type: 'sent' });
+                setProgress(100);
+                handleButtonClick();
+            }
+            else {
+                setProgress(100);
+                setStatus({ type: 'not_sent' });
+                handleButtonClick();
+            }
+
 
         } catch (error) {
+            setProgress(100)
             setStatus({ type: 'not_sent' });
-            console.error(error);
+            
+            handleButtonClick();
+            // console.error(error);
 
         }
     };
@@ -170,6 +188,11 @@ export default function Home() {
                     <strong>"Failed to send email!!!"</strong>
                 </div>
             )}
+            <LoadingBar
+                color='#002554' height="3px" shadow="true"
+                progress={progress}
+                onLoaderFinished={() => setProgress(0)}
+            />
 
             <div class="table_container my-2 mx-2">
                 <div class="table-responsive ">
@@ -192,7 +215,7 @@ export default function Home() {
                                 (info) => {
                                     return (
                                         <tr>
-                                            <td><a href={info.sap_prod}><svg  width="15" height="15" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                            <td><a href={info.sap_prod}><svg width="15" height="15" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                                             </svg></a>&nbsp;{info.sap_prod}</td>
                                             <td>{info.sap_sys_id}</td>
