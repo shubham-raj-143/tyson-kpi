@@ -1,10 +1,11 @@
-ul {
+ul{
     background-color: #EDF3F9;
     text-align: center;
-
-
 }
-
+.nav{
+    background-color: #EDF3F9;
+    text-align: center;
+}
 .nav-link {
     color: #002554;
     margin-top: 2rem;
