@@ -241,7 +241,7 @@ export default function Home() {
                     background: '#002554',
                     color: '#002554',
                     borderColor: '#002554',
-                    height: '2px',
+                    height: '0.1rem',
                   }}
                 /> 
 
