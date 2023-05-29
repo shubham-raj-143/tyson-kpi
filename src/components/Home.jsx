@@ -57,8 +57,8 @@ export default function Home() {
 
 
     // dealing with radio buttons
-    const [fileFormat, setFileFormat] = useState('');
-    const [topping, setTopping] = useState("")
+    const [fileFormat, setFileFormat] = useState('excel');
+    const [topping, setTopping] = useState("excel")
 
     const onOptionChange = e => {
         setTopping(e.target.value)
@@ -234,7 +234,16 @@ export default function Home() {
 
 
                     </table>
+                    
                 </div>
+                <hr
+                style={{
+                    background: '#002554',
+                    color: '#002554',
+                    borderColor: '#002554',
+                    height: '2px',
+                  }}
+                /> 
 
             </div>
 
@@ -285,18 +294,18 @@ export default function Home() {
                 </div>
 
             </div> */}
-
+           
 
             <form class="send_form mx-2 mx-4" action="" method="post">
                 <div class="mb-3 mt-4">
-                    <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com"
+                    <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@tyson.com"
                         value={recipientEmail}
                         onChange={(e) => setRecipientEmail(e.target.value)} />
                 </div>
                 <h4 class="form-text mt-4">Send data as</h4>
 
                 <div class="form-check" value={fileFormat}>
-                    <input class="form-check-input" type="radio" name="radio" id="radio_excel" value="excel" onChange={onOptionChange} />
+                    <input class="form-check-input" type="radio" name="radio" id="radio_excel" value="excel" checked="checked"  onChange={onOptionChange} />
                     <label class="form-check-label" for="radio_excel">
                         Excel
                     </label>

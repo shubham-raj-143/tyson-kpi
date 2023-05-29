@@ -15,7 +15,8 @@ ul{
 }
 
 .nav-link:hover {
-    color: #002554;
+    background-color: #002554;
+    color: #EDF3F9;
 }
 
 
@@ -68,12 +69,12 @@ padding-left: 8rem;
 padding-right: 5rem;
 }
 .sub_btn{
-    background-color:#FFF2E0 ;
-    color: #916600;
+    background-color:#EDF3F9 ;
+    color: #002554;
     font-weight: 500;
 
 }
 .sub_btn:hover{
-    background-color:#916600 ;
-    color: #FFF2E0;
+    background-color:#002554 ;
+    color: #EDF3F9;
 }
