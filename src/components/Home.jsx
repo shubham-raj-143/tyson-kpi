@@ -14,7 +14,7 @@ import { useDownloadExcel } from "react-export-table-to-excel"
 import React from 'react';
 import axios from 'axios';
 import JsonData from './table.json';
-import LoadingBar from 'react-top-loading-bar'
+import LoadingBar from 'react-top-loading-bar';
 
 export default function Home() {
 
@@ -57,8 +57,8 @@ export default function Home() {
 
 
     // dealing with radio buttons
-    const [fileFormat, setFileFormat] = useState('excel');
-    const [topping, setTopping] = useState("excel")
+    const [fileFormat, setFileFormat] = useState('');
+    const [topping, setTopping] = useState("")
 
     const onOptionChange = e => {
         setTopping(e.target.value)
@@ -138,7 +138,7 @@ export default function Home() {
             });
             // console.log(response);
             if (response.data.message === 'sent') {
-                
+
                 setStatus({ type: 'sent' });
                 setProgress(100);
                 handleButtonClick();
@@ -153,14 +153,14 @@ export default function Home() {
         } catch (error) {
             setProgress(100)
             setStatus({ type: 'not_sent' });
-            
+
             handleButtonClick();
             // console.error(error);
 
         }
     };
 
-
+    
 
 
 
@@ -215,15 +215,25 @@ export default function Home() {
                                 (info) => {
                                     return (
                                         <tr>
-                                            <td><a href={info.sap_prod}><svg width="15" height="15" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+
+                                            <td onClick="/"><a href={info.sap_prod}><svg width="15" height="15" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+
                                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+
                                             </svg></a>&nbsp;{info.sap_prod}</td>
+
                                             <td>{info.sap_sys_id}</td>
+
                                             <td>{info.sys_desc}</td>
+
                                             <td>{info.Type}</td>
+
                                             <td>{info.Environment}</td>
+
                                             <td>{info.run_hana}</td>
+
                                             <td>{info.HANA}</td>
+
                                         </tr>
                                     )
                                 }
@@ -234,16 +244,16 @@ export default function Home() {
 
 
                     </table>
-                    
+
                 </div>
                 <hr
-                style={{
-                    background: '#002554',
-                    color: '#002554',
-                    borderColor: '#002554',
-                    height: '0.1rem',
-                  }}
-                /> 
+                    style={{
+                        background: '#002554',
+                        color: '#002554',
+                        borderColor: '#002554',
+                        height: '0.1rem',
+                    }}
+                />
 
             </div>
 
@@ -294,7 +304,7 @@ export default function Home() {
                 </div>
 
             </div> */}
-           
+
 
             <form class="send_form mx-2 mx-4" action="" method="post">
                 <div class="mb-3 mt-4">
@@ -305,7 +315,7 @@ export default function Home() {
                 <h4 class="form-text mt-4">Send data as</h4>
 
                 <div class="form-check" value={fileFormat}>
-                    <input class="form-check-input" type="radio" name="radio" id="radio_excel" value="excel" checked="checked"  onChange={onOptionChange} />
+                    <input class="form-check-input" type="radio" name="radio" id="radio_excel" value="excel" onChange={onOptionChange} />
                     <label class="form-check-label" for="radio_excel">
                         Excel
                     </label>

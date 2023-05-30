@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import '../css/Home.css'
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 
 export default function Header() {
 
