@@ -17,7 +17,22 @@ import JsonData from './table.json';
 import LoadingBar from 'react-top-loading-bar';
 
 export default function Home() {
+    // table search
+    const [searchTerm, setSearchTerm] = useState('');
+    const [data, setData] = useState(
+        JsonData
+    );
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    };
 
+    const filteredData = data.filter((info) =>
+        //   info.sap_sys_id.toLowerCase().includes(searchTerm.toLowerCase())
+        Object.values(info).some(
+            (value) =>
+                typeof value === 'string' &&
+                value.toLowerCase().includes(searchTerm.toLowerCase())
+        ));
 
     // fade alert box after 3 seconds
     const [isAlertVisible, setIsAlertVisible] = React.useState(false);
@@ -160,14 +175,41 @@ export default function Home() {
         }
     };
 
-    
+
 
 
 
     return (
         <>
 
-            <Header />
+            <nav class="nav navbar navbar-expand-lg navbar-light bg-light py-0">
+                <div class="nav container-fluid">
+                    <a class="navbar-brand" href="https://www.tysonfoods.com/" target="_blank"> <img src={h_blue_logo} class="logo img-fluid rounded-top" alt="tyson logo" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link mt-2 mx-5" aria-current="page" href="/">SAP Landscape</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mt-2 mx-5" href="../statistics/index.html" >Statistics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mt-2 mx-5" href="../logs/index.html">Logs</a>
+                            </li>
+                            <li class="d-flex">
+                                <input class="form-control input-search me-2 mt-2 mx-5" type="search" placeholder="Search using System ID" aria-label="Search" value={searchTerm}
+                                    onChange={handleSearch} />
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
             {isAlertVisible && status?.type === 'success' && (
                 <div className="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>"Download Successful!!!"</strong>
@@ -211,10 +253,10 @@ export default function Home() {
 
                         </thead>
                         <tbody>
-                            {JsonData.map(
+                            {filteredData.map(
                                 (info) => {
                                     return (
-                                        <tr>
+                                        <tr key={info.id}>
 
                                             <td onClick="/"><a href={info.sap_prod}><svg width="15" height="15" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
 

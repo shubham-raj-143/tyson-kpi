@@ -78,3 +78,19 @@ padding-right: 5rem;
     background-color:#002554 ;
     color: #EDF3F9;
 }
+.form-control{
+    border: 0px;
+    color: #002554;
+    box-shadow: none;
+    
+    outline: none;
+  }
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+    color: #002554;
+    border: 2px solid #002554;
+}
+.form-control::placeholder{
+    color: #002454b6;
+}
