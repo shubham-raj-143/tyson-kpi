@@ -9,6 +9,7 @@ ul{
 .nav-link {
     color: #002554;
     margin-top: 2rem;
+    padding: 0.4rem;
 
     font-weight: bold;
 
@@ -17,6 +18,8 @@ ul{
 .nav-link:hover {
     background-color: #002554;
     color: #EDF3F9;
+    padding: 0.4rem;
+
 }
 
 
@@ -24,6 +27,7 @@ ul{
     width: 12rem;
     height: 6rem;
     cursor: pointer;
+    margin-left: 1rem;
 }
 
 .profile_logo {
@@ -33,6 +37,12 @@ ul{
     margin-top: 1.5rem;
     cursor: pointer;
 }
+.navbar-nav .nav-link.active {
+    background-color:#002554 ;
+    color: #EDF3F9;
+    padding: 0.4rem;
+}
+
 
 /* table styling */
 .table-responsive {
@@ -82,15 +92,15 @@ padding-right: 5rem;
     border: 0px;
     color: #002554;
     box-shadow: none;
-    
+    border: 2px solid #809E9B;
     outline: none;
   }
 .form-control:focus{
     outline: none;
     box-shadow: none;
     color: #002554;
-    border: 2px solid #002554;
+    border: 2px solid #506B67;
 }
 .form-control::placeholder{
-    color: #002454b6;
+    color: #002554;
 }

@@ -17,6 +17,15 @@ import JsonData from './table.json';
 import LoadingBar from 'react-top-loading-bar';
 
 export default function Home() {
+    // active navigation item
+    const [activeNavItem, setActiveNavItem] = useState('landscape');
+
+    const handleNavItemClick = (navItem) => {
+        setActiveNavItem(navItem);
+
+        
+    };
+   
     // table search
     const [searchTerm, setSearchTerm] = useState('');
     const [data, setData] = useState(
@@ -191,14 +200,19 @@ export default function Home() {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" aria-current="page" href="/">SAP Landscape</a>
+                                <a  className={`nav-link mt-2 mx-5 ${activeNavItem === 'landscape' ? 'active' : ''}`}
+            onClick={() => handleNavItemClick('landscape')} aria-current="page" href="/landscape"
+                                >SAP Landscape</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" href="../statistics/index.html" >Statistics</a>
+                                <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'statistics' ? 'active' : ''}`}
+                                    onClick={() => handleNavItemClick('statistics')} href="../statistics/index.html" >Statistics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" href="../logs/index.html">Logs</a>
+                                <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'logs' ? 'active' : ''}`}
+                                    onClick={() => handleNavItemClick('logs')} href="../logs/index.html">Logs</a>
                             </li>
+                            
                             <li class="d-flex">
                                 <input class="form-control input-search me-2 mt-2 mx-5" type="search" placeholder="Search" aria-label="Search" value={searchTerm}
                                     onChange={handleSearch} />
@@ -290,9 +304,9 @@ export default function Home() {
                 </div>
                 <hr
                     style={{
-                        background: '#002554',
-                        color: '#002554',
-                        borderColor: '#002554',
+                        background: '#65686B',
+                        color: '#65686B',
+                        borderColor: '#65686B',
                         height: '0.1rem',
                     }}
                 />

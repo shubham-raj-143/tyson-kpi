@@ -9,12 +9,19 @@ import '../css/Home.css'
 import { useEffect, useState } from "react";
 
 export default function Header() {
+    // active navigation item
+    const [activeNavItem, setActiveNavItem] = useState('');
+
+    const handleNavItemClick = (navItem) => {
+        setActiveNavItem(navItem);
+        activeNavItem=navItem;
+    };
 
     return (
         <>
 
 
-            <nav class="nav navbar navbar-expand-lg navbar-light bg-light py-0">
+<nav class="nav navbar navbar-expand-lg navbar-light bg-light py-0">
                 <div class="nav container-fluid">
                     <a class="navbar-brand" href="https://www.tysonfoods.com/" target="_blank"> <img src={h_blue_logo} class="logo img-fluid rounded-top" alt="tyson logo" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,19 +30,25 @@ export default function Header() {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" aria-current="page" href="/">SAP Landscape</a>
+                                <a  className={`nav-link mt-2 mx-5 ${activeNavItem === 'landscape' ? 'active' : ''}`}
+            onClick={() => handleNavItemClick('landscape')} aria-current="page" href="/landscape"
+                                >SAP Landscape</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" href="../statistics/index.html" >Statistics</a>
+                                <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'statistics' ? 'active' : ''}`}
+                                    onClick={() => handleNavItemClick('statistics')} href="../statistics/index.html" >Statistics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-2 mx-5" href="../logs/index.html">Logs</a>
+                                <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'logs' ? 'active' : ''}`}
+                                    onClick={() => handleNavItemClick('logs')} href="../logs/index.html">Logs</a>
                             </li>
+                           
 
                         </ul>
                     </div>
                 </div>
             </nav>
+
 
             {/* <ul class="nav nav-pills nav-fill">
                 <li class="nav-item brand">
