@@ -200,7 +200,7 @@ export default function Home() {
                                 <a class="nav-link mt-2 mx-5" href="../logs/index.html">Logs</a>
                             </li>
                             <li class="d-flex">
-                                <input class="form-control input-search me-2 mt-2 mx-5" type="search" placeholder="Search using System ID" aria-label="Search" value={searchTerm}
+                                <input class="form-control input-search me-2 mt-2 mx-5" type="search" placeholder="Search" aria-label="Search" value={searchTerm}
                                     onChange={handleSearch} />
                             </li>
 
