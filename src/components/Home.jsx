@@ -22,10 +22,8 @@ export default function Home() {
 
     const handleNavItemClick = (navItem) => {
         setActiveNavItem(navItem);
-
-        
     };
-   
+
     // table search
     const [searchTerm, setSearchTerm] = useState('');
     const [data, setData] = useState(
@@ -137,8 +135,6 @@ export default function Home() {
             doc.text(title, marginLeft, 40);
             doc.autoTable(content);
             doc.save("report.pdf");
-
-
         }
         else {
             event.preventDefault();
@@ -200,8 +196,8 @@ export default function Home() {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a  className={`nav-link mt-2 mx-5 ${activeNavItem === 'landscape' ? 'active' : ''}`}
-            onClick={() => handleNavItemClick('landscape')} aria-current="page" href="/landscape"
+                                <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'landscape' ? 'active' : ''}`}
+                                    onClick={() => handleNavItemClick('landscape')} aria-current="page" href="/landscape"
                                 >SAP Landscape</a>
                             </li>
                             <li class="nav-item">
@@ -212,7 +208,7 @@ export default function Home() {
                                 <a className={`nav-link mt-2 mx-5 ${activeNavItem === 'logs' ? 'active' : ''}`}
                                     onClick={() => handleNavItemClick('logs')} href="../logs/index.html">Logs</a>
                             </li>
-                            
+
                             <li class="d-flex">
                                 <input class="form-control input-search me-2 mt-2 mx-5" type="search" placeholder="Search" aria-label="Search" value={searchTerm}
                                     onChange={handleSearch} />
