@@ -10,9 +10,10 @@ import '../css/Home.css'
 import { useEffect, useState } from "react";
 export default function App() {
     const [activeNavItem, setActiveNavItem] = useState('statistics');
-
+    
     const handleNavItemClick = (navItem) => {
         setActiveNavItem(navItem);
+
 
         
     };
