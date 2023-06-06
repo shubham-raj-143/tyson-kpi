@@ -16,6 +16,7 @@ import axios from 'axios';
 import JsonData from './table.json';
 import LoadingBar from 'react-top-loading-bar';
 
+
 export default function Home() {
     // active navigation item
     const [activeNavItem, setActiveNavItem] = useState('landscape');

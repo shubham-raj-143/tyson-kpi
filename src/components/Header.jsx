@@ -14,7 +14,6 @@ export default function Header() {
 
     const handleNavItemClick = (navItem) => {
         setActiveNavItem(navItem);
-        activeNavItem=navItem;
     };
 
     return (
