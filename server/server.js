@@ -2,7 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const pdfkit = require('pdfkit');
-const exceljs = require('exceljs');
+const ExcelJS = require('exceljs');
 const cors = require('cors');
 const path = require('path');
 
@@ -73,7 +73,7 @@ app.post('/generate-and-send', async (req, res) => {
     } else if (fileFormat === 'excel') {
       // Generate Excel
       attachmentPath = path.join(tempDir, 'table.xlsx');
-      const workbook = new exceljs.Workbook();
+      const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('Sheet 1');
       worksheet.columns = [
         { header: 'SAP Product', key: 'sap_prod', width: 20 },
@@ -128,7 +128,35 @@ app.post('/generate-and-send', async (req, res) => {
     res.status(500).json({ error: 'Failed to send email' });
   }
 });
+app.get('/api/tables/:sapSystemId', async (req, res) => {
+  const { sapSystemId } = req.params;
 
+  // Load the Excel file
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.readFile('productinfo.xlsx');
+
+  // Get the worksheet with the data
+  const worksheet = workbook.getWorksheet('Sheet1');
+
+  const rows = [];
+  worksheet.eachRow((row, rowNumber) => {
+    if (rowNumber !== 1 && row.getCell(1).value === sapSystemId) {
+      const rowData = {
+        SystemID: row.getCell(1).value,
+        ProductName: row.getCell(2).value,
+        Version: row.getCell(3).value,
+        Description: row.getCell(4).value,
+        ModifiedDate: row.getCell(5).value,
+        ModifiedTime: row.getCell(6).value,
+        InstalledYear: row.getCell(7).value,
+      };
+      rows.push(rowData);
+    }
+  });
+
+  res.json(rows);
+
+});
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
