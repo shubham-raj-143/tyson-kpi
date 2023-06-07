@@ -64,7 +64,14 @@ a{
 a:hover{
     color: #809E9B;
 }
-
+a:not([href]):not([class]) {
+    color: #506B67;
+    text-decoration: none;
+}
+a:not([href]):not([class]):hover{
+    color: #809E9B;
+    cursor: pointer;
+}
 td,th {
     padding: 5px 20px;
     color: #002554;

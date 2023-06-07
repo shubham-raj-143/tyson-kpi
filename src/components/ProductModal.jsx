@@ -9,11 +9,32 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: "fit-content",
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
-  overflow:"auto"
+  overflow:"auto",
+  '@media(min-width: 220px)' : {
+    width: '200px'
+  },
+  '@media(min-width: 340px)' : {
+    width: '310px'
+  },
+  '@media(min-width: 460px)' : {
+    width: '420px'
+  },
+  '@media(min-width: 760px)' : {
+    width: '700px'
+  },
+  '@media(min-width: 1000px)' : {
+    width: '920px'
+  },
+  '@media(min-width: 1200px)' : {
+    width: '1120px'
+  },
+  '@media(min-width: 1600px)' : {
+    width: '1520px'
+  },
+  
 };
 
 const TableComponent = memo(({ columns, data }) => {
@@ -26,7 +47,7 @@ const TableComponent = memo(({ columns, data }) => {
   } = useTable({ columns, data });
 
   return (
-    <table {...getTableProps()} className="sap-system-table">
+    <table {...getTableProps()} className="table table-responsive table-bordered responsive-lg responsive-md responsive-sm sap-system-table">
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()} key="header-row">

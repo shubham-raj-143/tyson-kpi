@@ -323,9 +323,6 @@ export default function Home() {
 
             </div>
 
-
-
-
             {/* <div class="table_container my-2 mx-2">
                 <div class="table-responsive ">
                     <table class="table table-responsive table-bordered responsive-lg responsive-md responsive-sm"
