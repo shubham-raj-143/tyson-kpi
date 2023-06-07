@@ -22,13 +22,16 @@ ul{
 
 }
 
-
+.form-text{
+    color: #53565A;
+}
 .logo {
     width: 12rem;
     height: 6rem;
     cursor: pointer;
     margin-left: 1rem;
 }
+
 
 .profile_logo {
     justify-content: end;
@@ -37,6 +40,7 @@ ul{
     margin-top: 1.5rem;
     cursor: pointer;
 }
+
 .navbar-nav .nav-link.active {
     background-color:#002554 ;
     color: #EDF3F9;

@@ -375,7 +375,7 @@ export default function Home() {
                         value={recipientEmail}
                         onChange={(e) => setRecipientEmail(e.target.value)} />
                 </div>
-                <h4 class="form-text mt-4">Send data as</h4>
+                <h4 class="form-text mt-4" >Send data as</h4>
 
                 <div class="form-check" value={fileFormat}>
                     <input class="form-check-input" type="radio" name="radio" id="radio_excel" value="excel" onChange={onOptionChange} />
