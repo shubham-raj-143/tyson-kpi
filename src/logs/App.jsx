@@ -16,6 +16,16 @@ export default function App() {
 
         
     };
+    
+    // const [count, setCount] = useState(0);
+
+    // // number of refresh done by users
+    // if (window.performance) {
+    //     if (performance.navigation.type == 1) {
+    //       setCount(count + 1);
+    //     } 
+    //   }
+
     return(
         <>
 <nav class="nav navbar navbar-expand-lg navbar-light bg-light py-0">
@@ -45,7 +55,7 @@ export default function App() {
                     </div>
                 </div>
             </nav>
-        <h1>This is Logs page</h1>
+        <h1></h1>
         </>
     );
 }
