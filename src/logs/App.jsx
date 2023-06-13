@@ -55,7 +55,6 @@ export default function App() {
                     </div>
                 </div>
             </nav>
-        <h1></h1>
         </>
     );
 }
